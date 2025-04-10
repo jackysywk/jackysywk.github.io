@@ -108,3 +108,5 @@ deploy:
   type: git
   repo: https://github.com/jackysywk/jackysywk.github.io.git
   branch: main
+
+image_dir: images
