@@ -2,6 +2,8 @@
 title: 学习Flutter之路（二）- Widgets
 date: 2025-04-14 15:55:27
 tags:
+- Flutter
+category: Flutter
 ---
 
 ## 前言
