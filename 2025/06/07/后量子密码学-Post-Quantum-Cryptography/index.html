@@ -6,15 +6,15 @@
   
   <title>后量子密码学 - Post Quantum Cryptography | 杰克的电脑世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="后量子密码学 与 加密货币写部落客的初衷是想让自己坚持学习，把所学到的知识跟志同道合的朋友交流。已经两个月没更新了，因为Flutter没有落地做项目的机会，所以也不焦急继续学下去。 最近换一个主题，我在研究后量子密码学，这个主题现在应该全世界不到0.001%的人类会关注，基本上跟身边的 IT行业 &#x2F; 或者炒币的朋友交流 也没留意，但是这东西和我们未来5-10年息息相关。 什么是后量子密码">
+  <meta name="description" content="后量子密码学 与 加密货币写部落客的初衷是想让自己坚持学习，把所学到的知识跟志同道合的朋友交流。已经两个月没更新了，因为Flutter没有落地做项目的机会，所以也不焦急继续学下去。 最近换一个主题，我在研究后量子密码学，这个主题现在应该全世界不到0.001%的人类会关注，基本上跟身边的 IT行业 &#x2F; 或者炒币的朋友交流 也没留意，但是这东西和我们未来息息相关，甚至5-10年内就会影响到我">
 <meta property="og:type" content="article">
 <meta property="og:title" content="后量子密码学 - Post Quantum Cryptography">
 <meta property="og:url" content="https://jackysywk.github.io/2025/06/07/%E5%90%8E%E9%87%8F%E5%AD%90%E5%AF%86%E7%A0%81%E5%AD%A6-Post-Quantum-Cryptography/index.html">
 <meta property="og:site_name" content="杰克的电脑世界">
-<meta property="og:description" content="后量子密码学 与 加密货币写部落客的初衷是想让自己坚持学习，把所学到的知识跟志同道合的朋友交流。已经两个月没更新了，因为Flutter没有落地做项目的机会，所以也不焦急继续学下去。 最近换一个主题，我在研究后量子密码学，这个主题现在应该全世界不到0.001%的人类会关注，基本上跟身边的 IT行业 &#x2F; 或者炒币的朋友交流 也没留意，但是这东西和我们未来5-10年息息相关。 什么是后量子密码">
+<meta property="og:description" content="后量子密码学 与 加密货币写部落客的初衷是想让自己坚持学习，把所学到的知识跟志同道合的朋友交流。已经两个月没更新了，因为Flutter没有落地做项目的机会，所以也不焦急继续学下去。 最近换一个主题，我在研究后量子密码学，这个主题现在应该全世界不到0.001%的人类会关注，基本上跟身边的 IT行业 &#x2F; 或者炒币的朋友交流 也没留意，但是这东西和我们未来息息相关，甚至5-10年内就会影响到我">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-06-07T15:07:03.000Z">
-<meta property="article:modified_time" content="2025-06-07T15:44:20.824Z">
+<meta property="article:modified_time" content="2025-06-07T15:49:24.632Z">
 <meta property="article:author" content="Jacky 杰克">
 <meta property="article:tag" content="Cryptography">
 <meta property="article:tag" content="Blockchain">
@@ -107,7 +107,7 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h2 id="后量子密码学-与-加密货币"><a href="#后量子密码学-与-加密货币" class="headerlink" title="后量子密码学 与 加密货币"></a>后量子密码学 与 加密货币</h2><p>写部落客的初衷是想让自己坚持学习，把所学到的知识跟志同道合的朋友交流。已经两个月没更新了，因为Flutter没有落地做项目的机会，所以也不焦急继续学下去。</p>
-<p>最近换一个主题，我在研究后量子密码学，这个主题现在应该全世界不到0.001%的人类会关注，基本上跟身边的 IT行业 &#x2F; 或者炒币的朋友交流 也没留意，但是这东西和我们未来5-10年息息相关。</p>
+<p>最近换一个主题，我在研究后量子密码学，这个主题现在应该全世界不到0.001%的人类会关注，基本上跟身边的 IT行业 &#x2F; 或者炒币的朋友交流 也没留意，但是这东西和我们未来息息相关，甚至5-10年内就会影响到我们。</p>
 <h2 id="什么是后量子密码学"><a href="#什么是后量子密码学" class="headerlink" title="什么是后量子密码学"></a>什么是后量子密码学</h2><p>先从简单说起，假设现在量子电脑已经面世，我们手上常用的 非对称加密算法将会失效。</p>
 <p>本来破解一个RSA 2048 bit 需要几百年的时间才能破解，但是量子电脑理论上几个小时就能破解。</p>
 <p>而比特币使用ECC (secp256k1， 256bit) 的算法也是属于非对称加密算法，同样受到量子电脑影响。</p>
@@ -120,12 +120,12 @@
 </ul>
 <p>简而言之，量子电脑主要针对传统非对称加密的方法<br>PQC意思是在量子电脑面世之前，利用数学的原理，提出了新的加密方法，能对抗量子电脑的破解</p>
 <h2 id="对加密货币的影响"><a href="#对加密货币的影响" class="headerlink" title="对加密货币的影响"></a>对加密货币的影响</h2><p>如果传统的加密货币没能在量子电脑面世之前升级，估计货币的价值会崩。</p>
-<p>同时，现在也有不同的PQC币推出，究竟这些PQC币会不会取代现有的主流加密货币，是我关心的。</p>
+<p>同时，现在也有不同的PQC币推出，究竟这些PQC币会不会取代现有的主流加密货币，是我最关心的。</p>
 <p>要解答这个问题，需要有很多方面的问题去研究，包括</p>
 <ol>
 <li><p>比特币&#x2F;以太币能不能升级，之前有没有升级过，难点在哪里？区块链参与者怎样能达成共识？开发者的大佬们会开发新币还是努力拯救？</p>
 </li>
-<li><p>市场会采纳NIST提出的算法？还是这些算法能不能得到验证？除了NIST，其他国际会不会推出自己的标准？</p>
+<li><p>市场会采纳NIST提出的算法？还是这些算法能不能得到验证？除了NIST，其他国家会不会推出自己的标准？</p>
 </li>
 <li><p>现在量子电脑的能力距离破解 RSA &#x2F; ECC 有多远？怎样去理解量子电脑的能力？ 人们对量子危机的恐惧的预期，会比真正量子电脑面世早来？</p>
 </li>
@@ -139,7 +139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jackysywk.github.io/2025/06/07/%E5%90%8E%E9%87%8F%E5%AD%90%E5%AF%86%E7%A0%81%E5%AD%A6-Post-Quantum-Cryptography/" data-id="cmbmeooi30005ooez7zhic0x4" data-title="后量子密码学 - Post Quantum Cryptography" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://jackysywk.github.io/2025/06/07/%E5%90%8E%E9%87%8F%E5%AD%90%E5%AF%86%E7%A0%81%E5%AD%A6-Post-Quantum-Cryptography/" data-id="cmbmetn740002qcez3ii4fs98" data-title="后量子密码学 - Post Quantum Cryptography" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
