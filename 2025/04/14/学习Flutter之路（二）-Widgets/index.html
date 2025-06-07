@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>学习Flutter之路（二）- Widgets | 杰克的电脑世界</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="前言上次说道新建项目后，你只需要先关注 main 函数 下面的 Material App 和 Scaffold 函数，按照Scaffold class 的 文档, 你可以设置AppBar属性和 bottomNavigationBar的属性, 大部分APP都用到这两个组件，我就利用以上的属性和Widget 构建了一个 简单小作业。  小工具推荐敲代码之前想向大家介绍一个小工具 Flutlab， 这个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习Flutter之路（二）- Widgets">
+<meta property="og:url" content="https://jackysywk.github.io/2025/04/14/%E5%AD%A6%E4%B9%A0Flutter%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89-Widgets/index.html">
+<meta property="og:site_name" content="杰克的电脑世界">
+<meta property="og:description" content="前言上次说道新建项目后，你只需要先关注 main 函数 下面的 Material App 和 Scaffold 函数，按照Scaffold class 的 文档, 你可以设置AppBar属性和 bottomNavigationBar的属性, 大部分APP都用到这两个组件，我就利用以上的属性和Widget 构建了一个 简单小作业。  小工具推荐敲代码之前想向大家介绍一个小工具 Flutlab， 这个">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jackysywk.github.io/images/%E5%AD%A6%E4%B9%A0Flutter%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89-Widgets/AppPreview.png">
+<meta property="og:image" content="https://jackysywk.github.io/images/%E5%AD%A6%E4%B9%A0Flutter%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89-Widgets/flutlab.png">
+<meta property="og:image" content="https://jackysywk.github.io/images/%E5%AD%A6%E4%B9%A0Flutter%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89-Widgets/home.png">
+<meta property="og:image" content="https://jackysywk.github.io/images/%E5%AD%A6%E4%B9%A0Flutter%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89-Widgets/navbar.png">
+<meta property="article:published_time" content="2025-04-14T07:55:27.000Z">
+<meta property="article:modified_time" content="2025-06-07T15:04:59.144Z">
+<meta property="article:author" content="Jacky 杰克">
+<meta property="article:tag" content="Flutter">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jackysywk.github.io/images/%E5%AD%A6%E4%B9%A0Flutter%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89-Widgets/AppPreview.png">
+  
+    <link rel="alternate" href="/atom.xml" title="杰克的电脑世界" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">杰克的电脑世界</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jackysywk.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-学习Flutter之路（二）-Widgets" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/04/14/%E5%AD%A6%E4%B9%A0Flutter%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89-Widgets/" class="article-date">
+  <time class="dt-published" datetime="2025-04-14T07:55:27.000Z" itemprop="datePublished">2025-04-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Flutter/">Flutter</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      学习Flutter之路（二）- Widgets
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上次说道新建项目后，你只需要先关注 main 函数 下面的 Material App 和 Scaffold 函数，按照Scaffold class 的 文档, 你可以设置AppBar属性和 bottomNavigationBar的属性, 大部分APP都用到这两个组件，我就利用以上的属性和Widget 构建了一个 简单小作业。</p>
+<p><img src="/images/%E5%AD%A6%E4%B9%A0Flutter%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89-Widgets/AppPreview.png" alt="Preview"></p>
+<h2 id="小工具推荐"><a href="#小工具推荐" class="headerlink" title="小工具推荐"></a>小工具推荐</h2><p>敲代码之前想向大家介绍一个小工具 <a target="_blank" rel="noopener" href="https://flutlab.io/">Flutlab</a>， 这个网页可以在不配置flutter环境下，提供一个编程环境，我自己使用免费版就在任何地方学习Flutter 代码</p>
+<p><img src="/images/%E5%AD%A6%E4%B9%A0Flutter%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89-Widgets/flutlab.png" alt="Flutlab"></p>
+<h2 id="Widgets"><a href="#Widgets" class="headerlink" title="Widgets"></a>Widgets</h2><p>Stateful Widgets 和 Stateless Widgets 是Flutter 中两个基本的Widget 类型，他们主要的区别在于是否需要管理状态。在了解之前，先说什么是Stateless Widgets。</p>
+<h3 id="Stateless-Widget"><a href="#Stateless-Widget" class="headerlink" title="Stateless Widget"></a>Stateless Widget</h3><p>顾名思义，Stateless Widget是无状态，你可以先定义variable 让Widgets 显示，但是这个variable 就在APP运行时无法改变（无法靠Widget自身改变，但可以依靠父组件改变，先不展开）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;package:flutter/material.dart&#x27;;</span><br><span class="line"></span><br><span class="line">class HomePage extends StatelessWidget &#123;</span><br><span class="line">  final String text;</span><br><span class="line"></span><br><span class="line">  const HomePage(&#123;Key? key, required this.text&#125;) : super(key: key);</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return Center(</span><br><span class="line">        child: Column(</span><br><span class="line">      mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">      children: [</span><br><span class="line">        Text(text),</span><br><span class="line">      ],</span><br><span class="line">    ));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我的Widget 的构造函数有个Text 的变量，都是在Widget 被调用时创建的，在我的APP中 这个变量是HOME<br><img src="/images/%E5%AD%A6%E4%B9%A0Flutter%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89-Widgets/home.png" alt="Stateless Widget"></p>
+<p>然后可以加上一个显示图片</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;package:flutter/material.dart&#x27;;</span><br><span class="line"></span><br><span class="line">class HomePage extends StatelessWidget &#123;</span><br><span class="line">  final String text;</span><br><span class="line"></span><br><span class="line">  const HomePage(&#123;Key? key, required this.text&#125;) : super(key: key);</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return Center(</span><br><span class="line">        child: Column(</span><br><span class="line">      mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">      children: [</span><br><span class="line">        Image.asset(</span><br><span class="line">          &quot;assets/test.jpeg&quot;,</span><br><span class="line">          width: 650, // 指定寬度</span><br><span class="line">          height: 400, // 指定高度</span><br><span class="line">          fit: BoxFit.contain,</span><br><span class="line">        ), // 控制圖片如何填充指定的空間),</span><br><span class="line">        Text(text),</span><br><span class="line">      ],</span><br><span class="line">    ));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>就变成上面Preview 的样子</p>
+<h3 id="Stateful-Widgets"><a href="#Stateful-Widgets" class="headerlink" title="Stateful Widgets"></a>Stateful Widgets</h3><p>我的理解是，Stateful Widgets 有一些方法让开发者调用，目的去改变Stateful Widgets 的状态，例如setState()方法</p>
+<p>我这个简单小作业APP的Stateful Widget就是 下面的导航栏</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">// 先定义组件类</span><br><span class="line">class MainScaffold extends StatefulWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  _MainScaffoldState createState() =&gt; _MainScaffoldState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 再定义组件的状态</span><br><span class="line"></span><br><span class="line">class _MainScaffoldState extends State&lt;MainScaffold&gt; &#123;</span><br><span class="line">  int _selectedIndex = 0;</span><br><span class="line"></span><br><span class="line">  // 不同頁面的列表</span><br><span class="line">  final List&lt;Widget&gt; _pages = [</span><br><span class="line">    HomePage(text: &#x27;HOME&#x27;), // 其他组件， 可以是Stateful 可以是Stateless</span><br><span class="line">    ProfilePage(text: &quot;Profile&quot;) </span><br><span class="line">  ];</span><br><span class="line"></span><br><span class="line">  // 定义方法去改变组件的状态</span><br><span class="line">  void _onItemTapped(int index) &#123;</span><br><span class="line">    setState(() &#123;</span><br><span class="line">      _selectedIndex = index;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        title: const Text(&#x27;My App&#x27;),</span><br><span class="line">      ),</span><br><span class="line">      body: _pages[_selectedIndex], // 顯示當前選中的頁面***</span><br><span class="line"></span><br><span class="line">      bottomNavigationBar: BottomNavigationBar(</span><br><span class="line">        items: const &lt;BottomNavigationBarItem&gt;[</span><br><span class="line">          BottomNavigationBarItem(</span><br><span class="line">            icon: Icon(Icons.home),</span><br><span class="line">            label: &#x27;Home&#x27;,</span><br><span class="line">          ),</span><br><span class="line">          BottomNavigationBarItem(</span><br><span class="line">            icon: Icon(Icons.person),</span><br><span class="line">            label: &#x27;Profile&#x27;,</span><br><span class="line">          ),</span><br><span class="line">        ],</span><br><span class="line">        currentIndex: _selectedIndex,</span><br><span class="line">        onTap: _onItemTapped,</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>导航栏会根据用户按钮输入，去改变_selectIndex 变量，从而改变body，变换_pages 列表返回的 其他页面class<br>这样就能轻松实现 导航栏 和页面切换功能。</p>
+<p><img src="/images/%E5%AD%A6%E4%B9%A0Flutter%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89-Widgets/navbar.png" alt="Profile Page"></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>Stateless Widget</th>
+<th>Stateful Widget</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>狀態管理</td>
+<td>無內部狀態</td>
+<td>通過State 對象管理</td>
+</tr>
+<tr>
+<td>重建機制</td>
+<td>只有外部傳入參數變化才重建</td>
+<td>setState被調用 或父組件重建時重建</td>
+</tr>
+<tr>
+<td>性能</td>
+<td>較高</td>
+<td>較低</td>
+</tr>
+<tr>
+<td>生命週期</td>
+<td>只有build的方法</td>
+<td>有多個生命週期方法，initState, createState…</td>
+</tr>
+<tr>
+<td>代碼結構</td>
+<td>Single Class</td>
+<td>Double Class</td>
+</tr>
+</tbody></table>
+<h3 id="预告"><a href="#预告" class="headerlink" title="预告"></a>预告</h3><p>虽然目前你可以表面上理解成 Stateful &#x2F; Stateless 就是有状态和无状态的组件类，但是在实际开发上，Stateless Widget 经常包含着多个 Stateful Widget， 做到不同状态变脸encapsulation 的效果，这个不难理解。</p>
+<p>但是，Flutter中也有一个常见的设计模式，叫做「状态提升」或者「容器-内容模式」，即使利用Stateful Widget 包含着一个Stateless Widget，Stateful Widget 的代码只专注管理状态，把状态变量传入Stateless Widget， Stateless Widget的代码只专注UI渲染的部分，透过这个模式，Stateless Widget 也可以改变。</p>
+<p>到实际操作，就会遇到这种大量互相嵌套的代码，下期就讲讲这种设计模式。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jackysywk.github.io/2025/04/14/%E5%AD%A6%E4%B9%A0Flutter%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89-Widgets/" data-id="cmbmeooi8000oooezfpiq76dn" data-title="学习Flutter之路（二）- Widgets" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flutter/" rel="tag">Flutter</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/06/07/%E5%90%8E%E9%87%8F%E5%AD%90%E5%AF%86%E7%A0%81%E5%AD%A6-Post-Quantum-Cryptography/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          后量子密码学 - Post Quantum Cryptography
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/04/10/%E5%AD%A6%E4%B9%A0Flutter%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">学习Flutter之路（一）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blockchain/">Blockchain</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Flutter/">Flutter</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blockchain/" rel="tag">Blockchain</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cryptography/" rel="tag">Cryptography</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flutter/" rel="tag">Flutter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quantum-Cryptography/" rel="tag">Quantum Cryptography</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" rel="tag">学习方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/" rel="tag">编程经验</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Blockchain/" style="font-size: 10px;">Blockchain</a> <a href="/tags/Cryptography/" style="font-size: 10px;">Cryptography</a> <a href="/tags/Flutter/" style="font-size: 20px;">Flutter</a> <a href="/tags/Quantum-Cryptography/" style="font-size: 10px;">Quantum Cryptography</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" style="font-size: 10px;">学习方法</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/" style="font-size: 10px;">编程经验</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/06/">六月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">四月 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/06/07/%E5%90%8E%E9%87%8F%E5%AD%90%E5%AF%86%E7%A0%81%E5%AD%A6-Post-Quantum-Cryptography/">后量子密码学 - Post Quantum Cryptography</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/14/%E5%AD%A6%E4%B9%A0Flutter%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89-Widgets/">学习Flutter之路（二）- Widgets</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/10/%E5%AD%A6%E4%B9%A0Flutter%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%80%EF%BC%89/">学习Flutter之路（一）</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/09/%E5%85%B3%E4%BA%8E%E6%88%91%E5%92%8C%E5%8D%9A%E5%AE%A2/">关于我和博客</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/07/My-First-Post/">My First Post</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 Jacky 杰克<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

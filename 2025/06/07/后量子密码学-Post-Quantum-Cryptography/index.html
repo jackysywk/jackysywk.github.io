@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>后量子密码学 - Post Quantum Cryptography | 杰克的电脑世界</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="后量子密码学 与 加密货币写部落客的初衷是想让自己坚持学习，把所学到的知识跟志同道合的朋友交流。已经两个月没更新了，因为Flutter没有落地做项目的机会，所以也不焦急继续学下去。 最近换一个主题，我在研究后量子密码学，这个主题现在应该全世界不到0.001%的人类会关注，基本上跟身边的 IT行业 &#x2F; 或者炒币的朋友交流 也没留意，但是这东西和我们未来5-10年息息相关。 什么是后量子密码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="后量子密码学 - Post Quantum Cryptography">
+<meta property="og:url" content="https://jackysywk.github.io/2025/06/07/%E5%90%8E%E9%87%8F%E5%AD%90%E5%AF%86%E7%A0%81%E5%AD%A6-Post-Quantum-Cryptography/index.html">
+<meta property="og:site_name" content="杰克的电脑世界">
+<meta property="og:description" content="后量子密码学 与 加密货币写部落客的初衷是想让自己坚持学习，把所学到的知识跟志同道合的朋友交流。已经两个月没更新了，因为Flutter没有落地做项目的机会，所以也不焦急继续学下去。 最近换一个主题，我在研究后量子密码学，这个主题现在应该全世界不到0.001%的人类会关注，基本上跟身边的 IT行业 &#x2F; 或者炒币的朋友交流 也没留意，但是这东西和我们未来5-10年息息相关。 什么是后量子密码">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-06-07T15:07:03.000Z">
+<meta property="article:modified_time" content="2025-06-07T15:44:20.824Z">
+<meta property="article:author" content="Jacky 杰克">
+<meta property="article:tag" content="Cryptography">
+<meta property="article:tag" content="Blockchain">
+<meta property="article:tag" content="Quantum Cryptography">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="杰克的电脑世界" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">杰克的电脑世界</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jackysywk.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-后量子密码学-Post-Quantum-Cryptography" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/06/07/%E5%90%8E%E9%87%8F%E5%AD%90%E5%AF%86%E7%A0%81%E5%AD%A6-Post-Quantum-Cryptography/" class="article-date">
+  <time class="dt-published" datetime="2025-06-07T15:07:03.000Z" itemprop="datePublished">2025-06-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Blockchain/">Blockchain</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      后量子密码学 - Post Quantum Cryptography
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="后量子密码学-与-加密货币"><a href="#后量子密码学-与-加密货币" class="headerlink" title="后量子密码学 与 加密货币"></a>后量子密码学 与 加密货币</h2><p>写部落客的初衷是想让自己坚持学习，把所学到的知识跟志同道合的朋友交流。已经两个月没更新了，因为Flutter没有落地做项目的机会，所以也不焦急继续学下去。</p>
+<p>最近换一个主题，我在研究后量子密码学，这个主题现在应该全世界不到0.001%的人类会关注，基本上跟身边的 IT行业 &#x2F; 或者炒币的朋友交流 也没留意，但是这东西和我们未来5-10年息息相关。</p>
+<h2 id="什么是后量子密码学"><a href="#什么是后量子密码学" class="headerlink" title="什么是后量子密码学"></a>什么是后量子密码学</h2><p>先从简单说起，假设现在量子电脑已经面世，我们手上常用的 非对称加密算法将会失效。</p>
+<p>本来破解一个RSA 2048 bit 需要几百年的时间才能破解，但是量子电脑理论上几个小时就能破解。</p>
+<p>而比特币使用ECC (secp256k1， 256bit) 的算法也是属于非对称加密算法，同样受到量子电脑影响。</p>
+<p>为了应对量子电脑的攻击，Natioanl Institute of Standards and Technology (NIST) 公布了4 个算法</p>
+<ul>
+<li>FIPS 203 ML-KEM (CRYSTALS-Kyber)</li>
+<li>FIPS 204 ML-DSA (CRYSTALS-Dilithium)</li>
+<li>FIPS 205 (SPHINCS+)</li>
+<li>FIPS 206 FN-DSA (FALCON)</li>
+</ul>
+<p>简而言之，量子电脑主要针对传统非对称加密的方法<br>PQC意思是在量子电脑面世之前，利用数学的原理，提出了新的加密方法，能对抗量子电脑的破解</p>
+<h2 id="对加密货币的影响"><a href="#对加密货币的影响" class="headerlink" title="对加密货币的影响"></a>对加密货币的影响</h2><p>如果传统的加密货币没能在量子电脑面世之前升级，估计货币的价值会崩。</p>
+<p>同时，现在也有不同的PQC币推出，究竟这些PQC币会不会取代现有的主流加密货币，是我关心的。</p>
+<p>要解答这个问题，需要有很多方面的问题去研究，包括</p>
+<ol>
+<li><p>比特币&#x2F;以太币能不能升级，之前有没有升级过，难点在哪里？区块链参与者怎样能达成共识？开发者的大佬们会开发新币还是努力拯救？</p>
+</li>
+<li><p>市场会采纳NIST提出的算法？还是这些算法能不能得到验证？除了NIST，其他国际会不会推出自己的标准？</p>
+</li>
+<li><p>现在量子电脑的能力距离破解 RSA &#x2F; ECC 有多远？怎样去理解量子电脑的能力？ 人们对量子危机的恐惧的预期，会比真正量子电脑面世早来？</p>
+</li>
+<li><p>现在有什么靠谱的PQC币？怎样交易？</p>
+</li>
+</ol>
+<h2 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h2><p>虽然不可能准确预测未来的发展，不过有一点可以肯定的是，量子电脑总有一天面世，到时候肯定会为加密货币带来一场风雨。</p>
+<p>当年比特币诞生，小弟还在读高中，遗憾未能好好把握风口。现在不能排除PQC会带来危机和机遇。</p>
+<p>我希望能做到一周1-2更，把这些问题梳理一下，为未来及早准备和部署。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jackysywk.github.io/2025/06/07/%E5%90%8E%E9%87%8F%E5%AD%90%E5%AF%86%E7%A0%81%E5%AD%A6-Post-Quantum-Cryptography/" data-id="cmbmeooi30005ooez7zhic0x4" data-title="后量子密码学 - Post Quantum Cryptography" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blockchain/" rel="tag">Blockchain</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cryptography/" rel="tag">Cryptography</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quantum-Cryptography/" rel="tag">Quantum Cryptography</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2025/04/14/%E5%AD%A6%E4%B9%A0Flutter%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89-Widgets/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">学习Flutter之路（二）- Widgets</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blockchain/">Blockchain</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Flutter/">Flutter</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blockchain/" rel="tag">Blockchain</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cryptography/" rel="tag">Cryptography</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flutter/" rel="tag">Flutter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quantum-Cryptography/" rel="tag">Quantum Cryptography</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" rel="tag">学习方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/" rel="tag">编程经验</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Blockchain/" style="font-size: 10px;">Blockchain</a> <a href="/tags/Cryptography/" style="font-size: 10px;">Cryptography</a> <a href="/tags/Flutter/" style="font-size: 20px;">Flutter</a> <a href="/tags/Quantum-Cryptography/" style="font-size: 10px;">Quantum Cryptography</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" style="font-size: 10px;">学习方法</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/" style="font-size: 10px;">编程经验</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/06/">六月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">四月 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/06/07/%E5%90%8E%E9%87%8F%E5%AD%90%E5%AF%86%E7%A0%81%E5%AD%A6-Post-Quantum-Cryptography/">后量子密码学 - Post Quantum Cryptography</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/14/%E5%AD%A6%E4%B9%A0Flutter%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89-Widgets/">学习Flutter之路（二）- Widgets</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/10/%E5%AD%A6%E4%B9%A0Flutter%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%80%EF%BC%89/">学习Flutter之路（一）</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/09/%E5%85%B3%E4%BA%8E%E6%88%91%E5%92%8C%E5%8D%9A%E5%AE%A2/">关于我和博客</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/07/My-First-Post/">My First Post</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 Jacky 杰克<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
